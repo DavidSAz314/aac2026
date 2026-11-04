@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Integrations | Sensors · GPS-D · Power · Comms | AAC SPEARHEAD</title>
+ <meta name="description" content="SPEARHEAD sensor fusion, GPS-denied nav, power/fuel, and multi-path comms: MANET, GoTenna." />
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>tailwind.config={theme:{extend:{colors:{deep:'#05070c',card:'#0c111a',elevated:'#121826',accent:{DEFAULT:'#f59e0b'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+ <link rel="stylesheet" href="css/styles.css" />
+ <link rel="icon" href="favicon.ico?v=aac-logo-web-jpg" sizes="any" />
+ <link rel="icon" type="image/png" href="assets/logos/favicon.png?v=aac-logo-web-jpg" />
+ <link rel="apple-touch-icon" href="assets/logos/favicon.png?v=aac-logo-web-jpg" />
+</head>
+<body>
+ <header id="site-header"></header>
+ <div id="cookie-banner"></div>
+
+ <section class="pt-16 pb-12 border-b border-[var(--border)] relative overflow-hidden">
+ <div class="absolute inset-0 opacity-20">
+ <img src="assets/img/block_diagram_example_01.png" alt="" class="w-full h-full object-cover" />
+ </div>
+ <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+ <p class="section-label mb-3">INTEGRATIONS</p>
+ <h1 class="section-title text-white mb-4">Sensors · Nav · Power · Comms</h1>
+ <p class="text-slate-400 max-w-2xl">Open modular bays and SPEARHEAD software stack accept multi-mode sensors, GPS-denied navigation, hybrid power, and resilient multi-path communications.</p>
+ </div>
+ </section>
+
+ <section id="sensors" class="py-16 border-b border-[var(--border)]">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6">
+ <h2 class="text-2xl font-bold text-white mb-2">Sensors</h2>
+ <p class="text-slate-400 text-sm mb-10 max-w-2xl">Onboard radar, EO/LWIR, SWIR, event/SNN cameras, laser designation, acoustics (onboard and dropped pucks), and full onboard sensor fusion with edge AI.</p>
+ <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+ <div class="card overflow-hidden">
+ <div class="aspect-video bg-elevated flex items-center justify-center p-4">
+ <img src="assets/sensors/teledyneflir_stormcaster-dx.png" alt="EO/IR StormCaster" class="max-h-full max-w-full object-contain" />
+ </div>
+ <div class="p-5">
+ <h3 class="font-semibold text-white">EO / LWIR</h3>
+ <p class="text-xs text-slate-500 mt-1">Teledyne FLIR StormCaster-DX class gimbals · day/night ISR-T</p>
+ </div>
+ </div>
+ <div class="card overflow-hidden">
+ <div class="aspect-video bg-elevated flex items-center justify-center p-4">
+ <img src="assets/sensors/gimbal_trillium_la.png" alt="Trillium gimbal" class="max-h-full max-w-full object-contain" />
+ </div>
+ <div class="p-5">
+ <h3 class="font-semibold text-white">HD EO/IR Gimbals</h3>
+ <p class="text-xs text-slate-500 mt-1">Trillium HD59 and similar · high-quality targeting payloads for HAMR</p>
+ </div>
+ </div>
+ <div class="card overflow-hidden">
+ <div class="aspect-video bg-elevated flex items-center justify-center p-4">
+ <img src="assets/sensors/fortem_r20i.png" alt="Fortem R20i radar" class="max-h-full max-w-full object-contain" />
+ </div>
+ <div class="p-5">
+ <h3 class="font-semibold text-white">Onboard Radar</h3>
+ <p class="text-xs text-slate-500 mt-1">Fortem R20i class · Echodyne EchoFlight · CUAS detect/track · all-weather</p>
+ </div>
+ </div>
+ <div class="card overflow-hidden">
+ <div class="aspect-video bg-elevated flex items-center justify-center p-4">
+ <img src="assets/sensors/prophesee_imx.png" alt="Event camera" class="max-h-full max-w-full object-contain" />
+ </div>
+ <div class="p-5">
+ <h3 class="font-semibold text-white">Event / SNN Cameras</h3>
+ <p class="text-xs text-slate-500 mt-1">Prophesee / Sony IMX event sensors · high-speed detect/classify</p>
+ </div>
+ </div>
+ <div class="card overflow-hidden">
+ <div class="aspect-video bg-elevated flex items-center justify-center p-4">
+ <img src="assets/sensors/quadsat_2to18_dome.png" alt="RF / RF spectrum" class="max-h-full max-w-full object-contain" />
+ </div>
+ <div class="p-5">
+ <h3 class="font-semibold text-white">RF / Spectrum</h3>
+ <p class="text-xs text-slate-500 mt-1">2–18 GHz class RF sensing · SIGINT / CUAS RF detect</p>
+ </div>
+ </div>
+ <div class="card overflow-hidden">
+ <div class="aspect-video bg-elevated flex items-center justify-center p-4">
+ <img src="assets/sensors/low_swap_edge_compute.png" alt="Low SWaP edge AI computer" class="max-h-full max-w-full object-contain" />
+ </div>
+ <div class="p-5">
+ <h3 class="font-semibold text-white">Multi-sensor fusion</h3>
+ <p class="text-xs text-slate-500 mt-1">Onboard AI fusion · laser designator · acoustic pucks · SWIR</p>
+ </div>
+ </div>
+ </div>
+ <div class="mt-10 card p-6 flex flex-col md:flex-row gap-6 items-center">
+ <img src="assets/img/drone_chase.png" alt="High-speed detect" class="rounded-xl w-full md:w-1/2 border border-[var(--border)]" />
+ <div>
+ <h3 class="font-semibold text-white mb-2">High-speed detect & classify</h3>
+ <p class="text-sm text-slate-400">Event cameras and edge AI enable rapid classification of high-speed aerial threats for ZEVO terminal guidance packages.</p>
+ <video controls muted playsinline class="mt-4 rounded-xl border border-[var(--border)] w-full max-h-48 object-cover" poster="assets/img/drone_chase.png">
+ <source src="assets/video/demo_highspeed_detectclassify_01_21d.mp4" type="video/mp4" />
+ </video>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section id="gps" class="py-16 border-b border-[var(--border)] bg-[#070b12]">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6">
+ <h2 class="text-2xl font-bold text-white mb-2">GPS-D / Navigation</h2>
+ <p class="text-slate-400 text-sm mb-8 max-w-2xl">Contested navigation is a SPEARHEAD baseline.</p>
+ <div class="grid md:grid-cols-3 gap-6">
+ <div class="card p-6">
+ <h3 class="font-semibold text-white mb-2">GPS-denied</h3>
+ <p class="text-sm text-slate-400">EO/LWIR + inertial + RF relative navigation for DDIL environments.</p>
+ </div>
+ <div class="card p-6">
+ <h3 class="font-semibold text-white mb-2">M-Code GPS</h3>
+ <p class="text-sm text-slate-400">Military grade GPS which degrades to GPS-D when contested.</p>
+ </div>
+ <div class="card p-6">
+ <h3 class="font-semibold text-white mb-2">Offboard / C2 nav</h3>
+ <p class="text-sm text-slate-400">C2 guided navigation - FAAD control with cueing - for multiple missions (ISR-T, terminal engagement, and others).</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section id="power" class="py-16 border-b border-[var(--border)]">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6">
+ <h2 class="text-2xl font-bold text-white mb-2">Power / Fuel</h2>
+ <p class="text-slate-400 text-sm mb-8 max-w-2xl">Hybrid fuel-electric density on HAMR; high-energy battery packs on ZEVO; ground power delivery mission packages.</p>
+ <div class="grid md:grid-cols-2 gap-6">
+ <div class="card p-6">
+ <h3 class="font-semibold text-white mb-2">HAMR hybrid</h3>
+ <p class="text-sm text-slate-400">EFI computer-controlled piston engine + generator powering six independent electric motors. Remote in-flight engine start/restart using onboard batteries.  Payload power: 200 W continuous / 2 kW peak @ 48 VDC.</p>
+ </div>
+ <div class="card p-6">
+ <h3 class="font-semibold text-white mb-2">Electric / recharge missions</h3>
+ <p class="text-sm text-slate-400">ZEVO enables battery exchange for distributed forces and carries high-density packs for 30 km multi-mission flights. Land-and-power packages allow HAMR to act as a mobile edge power node for distributed forces.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section id="comms" class="py-16">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6">
+ <h2 class="text-2xl font-bold text-white mb-2">Comms</h2>
+ <p class="text-slate-400 text-sm mb-8 max-w-2xl">Multi-path resilient networking for contested and expeditionary ops.</p>
+ <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-5 max-w-3xl">
+          <div class="card p-5">
+ <p class="text-xs font-mono text-amber-500 mb-2">MANET</p>
+ <h3 class="font-semibold text-white text-sm">Silvus / MANET radios</h3>
+ <p class="text-xs text-slate-500 mt-2">AES-256 encrypted mesh for unit and swarm networking.</p>
+ </div>
+ <div class="card p-5">
+ <p class="text-xs font-mono text-amber-500 mb-2">MESH</p>
+ <h3 class="font-semibold text-white text-sm">goTenna Aspen Grove</h3>
+ <p class="text-xs text-slate-500 mt-2">Multi-thousand node networking for large formations.</p>
+ </div>
+ </div>
+ <div class="mt-10 w-full">
+ <div class="card p-6 md:p-8 w-full flex flex-col lg:flex-row gap-6 lg:gap-10 items-center lg:items-stretch">
+ <div class="flex-1 flex flex-col justify-center min-w-0">
+ <h3 class="font-semibold text-white text-xl mb-2">C2 / FAAD integration</h3>
+ <p class="text-sm text-slate-400 leading-relaxed">SPEARHEAD integrates with forward-area air defense and C2 systems for cueing, autonomy, and TAK/ATAK map interfaces — closing the loop from detect to defeat.</p>
+ </div>
+ <div class="flex-1 w-full min-w-0">
+ <img src="assets/img/atak_dtc_links.jpg" alt="ATAK / C2 links" class="rounded-lg border border-[var(--border)] w-full h-full object-cover max-h-72 lg:max-h-none" />
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <footer id="site-footer"></footer>
+ <script src="js/main.js"></script>
+</body>
+</html>

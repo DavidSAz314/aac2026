@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Software Platform | HSI · ZEVO · HAMR | Advanced Aircraft Company</title>
+ <meta name="description" content="AAC SPEARHEAD software platform: HSI high-speed interceptor, ZEVO Group-1 printable attack drone, HAMR Group-2 hybrid multi-rotor. All platforms share the same software defined vehicle suite." />
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>tailwind.config={theme:{extend:{colors:{deep:'#05070c',card:'#0c111a',elevated:'#121826',accent:{DEFAULT:'#f59e0b'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+ <link rel="stylesheet" href="css/styles.css?v=footer5-odf" />
+ <link rel="icon" href="favicon.ico?v=aac-logo-web-jpg" sizes="any" />
+ <link rel="icon" type="image/png" href="assets/logos/favicon.png?v=aac-logo-web-jpg" />
+ <link rel="apple-touch-icon" href="assets/logos/favicon.png?v=aac-logo-web-jpg" />
+</head>
+<body>
+ <header id="site-header"></header>
+ <div id="cookie-banner"></div>
+
+ <section class="pt-16 pb-12 border-b border-[var(--border)] relative overflow-hidden">
+ <div class="absolute inset-0 opacity-20" aria-hidden="true">
+ <img src="assets/img/spearhead_arch.jpg" alt="" class="w-full h-full object-cover" />
+ </div>
+ <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+ <p class="section-label mb-3">SOFTWARE PLATFORM</p>
+ <h1 class="section-title text-white mb-4">SPEARHEAD</h1>
+ <p class="text-slate-400 max-w-2xl">All platforms share the same software defined vehicle suite.</p>
+ <div class="flex flex-wrap gap-3 mt-8">
+ <a href="#hsi" class="btn-outline !py-2 !px-4 !text-xs">HSI</a>
+ <a href="#zevo" class="btn-outline !py-2 !px-4 !text-xs">ZEVO</a>
+ <a href="#hamr" class="btn-outline !py-2 !px-4 !text-xs">HAMR</a>
+ </div>
+ </div>
+ </section>
+
+ <!-- HSI first -->
+ <section id="hsi" class="uas-section py-20 border-b border-[var(--border)]">
+ <!-- A4.4: silent HSI video faded underlay behind entire section -->
+ <div class="hero-video-wrap" aria-hidden="true">
+ <video autoplay muted loop playsinline preload="metadata" poster="assets/uas/hsi/HSI-hero.png">
+ <source src="assets/uas/hsi/hsi_s9_c2faadguidance_silent.mp4" type="video/mp4" />
+ </video>
+ <div class="hero-overlay"></div>
+ </div>
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+ <div class="grid lg:grid-cols-2 gap-12 items-start">
+ <!-- Text + table (left) -->
+ <div>
+ <div class="flex items-center gap-3 mb-4 flex-wrap">
+ <span class="badge badge-pre-production"><span class="badge-dot"></span> <span class="status-pre-production">Pre-production</span></span>
+ <span class="text-xs font-mono text-slate-500">GROUP 2</span>
+ <span class="badge badge-in-air"><span class="badge-dot"></span> <span class="status-in-air">Domain: In air</span></span>
+ </div>
+ <!-- A4.1: family image to the right of title -->
+ <div class="uas-title-row mb-2">
+ <h2 class="text-3xl sm:text-4xl font-bold text-white">HSI</h2>
+ <img
+ class="uas-title-family"
+ src="assets/uas/hsi/aac_uav_family_hsi.png"
+ alt="HSI family silhouette"
+ />
+ </div>
+ <p class="text-amber-500 font-medium text-sm mb-4">500 mph · 25,000 ft</p>
+ <p class="text-slate-400 leading-relaxed mb-6">
+ Fills the gap between guns and multi-million-dollar missiles. Inquire for more information.
+ </p>
+ <div class="grid grid-cols-2 gap-3 mb-8 max-w-md">
+ <div class="spec-chip"><div class="value">500</div><div class="label">mph dash</div></div>
+ <div class="spec-chip"><div class="value">25k</div><div class="label">ft ceiling</div></div>
+ </div>
+ <div class="spec-table-wrap mb-8">
+ <table class="spec-table">
+ <tr><th>Threat focus</th><td><span class="status-pre-production">pre-production</span></td></tr>
+ <tr><th>Kill threshold</th><td><span class="status-pre-production">pre-production</span></td></tr>
+ <tr><th>C2</th><td><span class="status-pre-production">pre-production</span></td></tr>
+ <tr><th>Commonality</th><td><span class="status-pre-production">pre-production</span></td></tr>
+ <tr><th>New design</th><td><span class="status-pre-production">pre-production</span></td></tr>
+ <tr><th>Deploy</th><td><span class="status-pre-production">pre-production</span></td></tr>
+ </table>
+ </div>
+ </div>
+ <!-- A4.2: hero + OV-1 to the right; A4.3: no secondary / no second family -->
+ <div class="space-y-4">
+ <img src="assets/uas/hsi/HSI-hero.png" alt="HSI primary — high-speed interceptor" class="rounded-2xl border border-[var(--border)] w-full uas-primary-img" />
+ <img src="assets/uas/hsi/OV1_capability_main_HSI.png" alt="HSI OV-1 capability overview" class="rounded-xl border border-[var(--border)] w-full bg-black/40" />
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- ZEVO -->
+ <section id="zevo" class="uas-section py-20 border-b border-[var(--border)]">
+ <!-- A2.4: zevo-print.jpg faded background under entire section (no video) -->
+ <div class="uas-bg-image" aria-hidden="true" style="--uas-bg:url('assets/uas/zevo/zevo-print.jpg')">
+ <div class="hero-overlay"></div>
+ </div>
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+ <div class="grid lg:grid-cols-2 gap-12 items-start">
+ <!-- A2.2: hero + OV-1 to the LEFT of text/table; A2.3: no secondary / no second family / no HAMR video -->
+ <div class="space-y-4">
+ <img src="assets/uas/zevo/zevo-hero.png" alt="ZEVO primary — Group-1 multi-mission attack drone" class="rounded-2xl border border-[var(--border)] w-full bg-elevated uas-primary-img" />
+ <img src="assets/uas/zevo/ov1_capability_main_Zevo.png" alt="ZEVO OV-1 capability overview" class="rounded-xl border border-[var(--border)] w-full bg-black/40" />
+ </div>
+ <!-- Text + table (right) -->
+ <div>
+ <div class="flex items-center gap-3 mb-4 flex-wrap">
+ <span class="badge badge-production"><span class="badge-dot"></span> <span class="status-production">Production</span></span>
+ <span class="text-xs font-mono text-slate-500">GROUP 1</span>
+ <span class="badge badge-ground-air"><span class="badge-dot"></span> <span class="status-ground-air">Domain: In air · On ground</span></span>
+ </div>
+ <!-- A2.1: family image to the right of title -->
+ <div class="uas-title-row mb-2">
+ <h2 class="text-3xl sm:text-4xl font-bold text-white">ZEVO</h2>
+ <img
+ class="uas-title-family"
+ src="assets/uas/zevo/aac_uav_family_zevo.png"
+ alt="ZEVO family silhouette"
+ />
+ </div>
+ <p class="text-amber-500 font-medium text-sm mb-4">Ultimate Group-1 multi-mission attack drone</p>
+ <p class="text-slate-400 leading-relaxed mb-6">
+ Patent-pending low-drag aerodynamic design eliminates ~80% of traditional quadcopter drag. Fully 3D-printable airframe, NDAA COTS electronics, reusable or attritable. One-way strike, ISR, radio relay, swarm. Expeditionary manufacturing ready.
+ </p>
+ <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+ <div class="spec-chip"><div class="value">30 km</div><div class="label">Range</div></div>
+ <div class="spec-chip"><div class="value">120 mph</div><div class="label">Max speed</div></div>
+ <div class="spec-chip"><div class="value">3 lb</div><div class="label">Payload</div></div>
+ <div class="spec-chip"><div class="value">13.7 lb</div><div class="label">MTOW</div></div>
+ </div>
+ <div class="spec-table-wrap mb-8">
+ <table class="spec-table">
+ <tr><th>Cruise speed</th><td>60 mph</td></tr>
+ <tr><th>Engagement range</th><td>~30 km</td></tr>
+ <tr><th>Airframe</th><td>Low-cost 3D printable · NDAA COTS</td></tr>
+ <tr><th>Attack modes</th><td>Reusable · one-way · direct fire</td></tr>
+ <tr><th>Munitions</th><td>Multiple options — including reusable</td></tr>
+ <tr><th>Other roles</th><td>ISR · radio relay · fast unit resupply · swarm</td></tr>
+ <tr><th>Span / height</th><td>33.9 in span · 23.6 in H · 21.1 in L</td></tr>
+ </table>
+ </div>
+</div>
+ </div>
+ </div>
+ </section>
+
+ <!-- HAMR -->
+ <section id="hamr" class="uas-section py-20 border-b border-[var(--border)]">
+ <!-- A3.4: faded HAMR video underlay behind entire section -->
+ <div class="hero-video-wrap" aria-hidden="true">
+ <video autoplay muted loop playsinline preload="metadata" poster="assets/uas/hamr/hamr_hero.png">
+ <source src="assets/uas/hamr/HAMR_flying.mp4" type="video/mp4" />
+ </video>
+ <div class="hero-overlay"></div>
+ </div>
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+ <div class="grid lg:grid-cols-2 gap-12 items-start">
+ <!-- Text + table (left) -->
+ <div>
+ <div class="flex items-center gap-3 mb-4 flex-wrap">
+ <span class="badge badge-production"><span class="badge-dot"></span> <span class="status-production">Production</span></span>
+ <span class="text-xs font-mono text-slate-500">GROUP 2</span>
+ <span class="badge badge-ground-air"><span class="badge-dot"></span> <span class="status-ground-air">Domain: In air · On ground</span></span>
+ </div>
+ <!-- A3.1: family image to the right of title, proportional -->
+ <div class="uas-title-row mb-2">
+ <h2 class="text-3xl sm:text-4xl font-bold text-white">HAMR</h2>
+ <img
+ class="uas-title-family"
+ src="assets/uas/hamr/aac_uav_family_hamr.png"
+ alt="HAMR family silhouette"
+ />
+ </div>
+ <p class="text-amber-500 font-medium text-sm mb-4">Hybrid Advanced Multi-Rotor</p>
+ <p class="text-slate-400 leading-relaxed mb-6">
+ Organic Group-2 UAS for tactical units. Hybrid fuel-electric propulsion delivers up to 3.5+ hours endurance / 11 lb payload — roughly 6× conventional multirotor flight time. Packs into a single case transportable by one person. Modular payload bays for sensor suites.
+ </p>
+ <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+ <div class="spec-chip"><div class="value">11 lb</div><div class="label">Max payload</div></div>
+ <div class="spec-chip"><div class="value">3.5+h</div><div class="label">Endurance</div></div>
+ <div class="spec-chip"><div class="value">55 lb</div><div class="label">MTOW</div></div>
+ <div class="spec-chip"><div class="value">VTOL</div><div class="label">Launch</div></div>
+ </div>
+ <div class="spec-table-wrap mb-8">
+ <table class="spec-table">
+ <tr><th>Propulsion</th><td>Hybrid fuel-electric · generator + 6× electric motors</td></tr>
+ <tr><th>Useful load</th><td>17 lb (fuel + payload)</td></tr>
+ <tr><th>Payload bays</th><td>Nose turret · center modular bay</td></tr>
+ <tr><th>Comms</th><td>Multiple supported tactical MANET radios</td></tr>
+ <tr><th>Nav</th><td>GPS-denied · M-Code GPS</td></tr>
+ <tr><th>Env</th><td>IP54 / IP65 path · dust & precip</td></tr>
+ <tr><th>Setup</th><td><5 min · 1-person case (58″×20″×20″)</td></tr>
+ </table>
+ </div>
+</div>
+ <!-- A3.2: hero + OV-1 to the right of text/table; A3.3: no secondary / no second family -->
+ <div class="space-y-4">
+ <img src="assets/uas/hamr/hamr_hero.png" alt="HAMR primary — Hybrid Advanced Multi-Rotor in flight" class="rounded-2xl border border-[var(--border)] w-full uas-primary-img" />
+ <img src="assets/uas/hamr/ov1_capability_main_HAMR.png" alt="HAMR OV-1 capability overview" class="rounded-xl border border-[var(--border)] w-full bg-black/40" />
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <footer id="site-footer"></footer>
+ <script src="js/main.js"></script>
+</body>
+</html>
