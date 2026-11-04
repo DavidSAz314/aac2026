@@ -1,0 +1,961 @@
+/* Advanced Aircraft Company - Spearhead Platform Site */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-deep: #05070c;
+  --bg-card: #0c111a;
+  --bg-elevated: #121826;
+  --border: #1e2a3a;
+  --border-hover: #2d3f55;
+  --accent: #f59e0b;
+  --accent-dim: #d97706;
+  --cyan: #22d3ee;
+  --cyan-dim: #0891b2;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --nav-h: 88px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-deep);
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* Sticky header */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(5, 7, 12, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+#site-header .nav-link {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.15s;
+}
+#site-header .nav-link:hover,
+#site-header .nav-link.active { color: var(--accent); }
+
+/* Dropdown mega */
+.nav-dropdown { position: relative; }
+.nav-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 280px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+}
+.nav-dropdown:hover .nav-dropdown-panel,
+.nav-dropdown:focus-within .nav-dropdown-panel { display: block; }
+.nav-dropdown-panel a {
+  display: block;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  transition: all 0.15s;
+}
+.nav-dropdown-panel a:hover {
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--accent);
+}
+.nav-dropdown-panel a span {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-top: 0.125rem;
+}
+
+/* Mobile menu */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: var(--nav-h) 0 0 0;
+  background: var(--bg-deep);
+  z-index: 99;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+#mobile-menu.open { display: block; }
+
+/* Hero */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.hero-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,7,12,0.4) 0%, rgba(5,7,12,0.85) 60%, var(--bg-deep) 100%);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.card-glow:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.08);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: #0a0f1a;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.15s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary:hover { background: #fbbf24; transform: translateY(-1px); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.15s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Section */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* Spec chips */
+.spec-chip {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+.spec-chip .value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.spec-chip .label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* Footer */
+#site-footer {
+  background: #03050a;
+  border-top: 1px solid var(--border);
+  padding: 3.5rem 0 2rem;
+}
+#site-footer a {
+  color: var(--text-dim);
+  font-size: 0.8125rem;
+  transition: color 0.15s;
+}
+#site-footer a:hover { color: var(--accent); }
+#site-footer h4 {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Cookie banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  display: none;
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+}
+#cookie-banner.show { display: block; }
+
+/* Legal pages */
+.legal-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+.legal-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+.legal-content p, .legal-content li {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+.legal-content ul { padding-left: 1.25rem; list-style: disc; }
+
+/* Grid utilities for product sections */
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Mission / capability icons — yellow PNGs from assets/icons/*_yellow.png
+   IMPORTANT: do NOT apply a colorizing filter. Icons already include yellow +
+   white (or other) detail (e.g. medical_yellow white plus). The old
+   brightness(0)+sepia filter flattened ALL opaque pixels to amber and
+   made white detail disappear. */
+img.mission-icon,
+.mission-icon {
+  width: 48px;
+  height: 48px;
+  max-width: 48px;
+  height: 48px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent !important;
+  background-color: transparent !important;
+  /* Preserve original PNG colors (yellow body + white detail, etc.) */
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal;
+  opacity: 1;
+  image-rendering: auto;
+}
+/* Larger variants keep true colors */
+img.mission-icon.w-20,
+.mission-icon.w-20 {
+  width: 5rem;
+  height: 5rem;
+  max-width: 5rem;
+}
+
+/* Service branch logos */
+.branch-logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.branch-logo:hover { opacity: 1; transform: scale(1.05); }
+
+/* Team card */
+.team-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  background: var(--bg-elevated);
+}
+
+/* Anchor offset for sticky header */
+section[id], div[id] { scroll-margin-top: calc(var(--nav-h) + 1rem); }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeUp 0.6s ease-out both; }
+
+/* Status badge — color language */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  border: 1px solid;
+}
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+/* production = green */
+.badge-production,
+.badge-live {
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.45);
+  background: rgba(34, 197, 94, 0.12);
+}
+/* in development = blue */
+.badge-dev,
+.badge-in-development {
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.45);
+  background: rgba(59, 130, 246, 0.12);
+}
+/* in air = cyan */
+.badge-in-air {
+  color: #22d3ee;
+  border-color: rgba(34, 211, 238, 0.45);
+  background: rgba(34, 211, 238, 0.12);
+}
+/* on ground = orange */
+.badge-on-ground {
+  color: #f97316;
+  border-color: rgba(249, 115, 22, 0.45);
+  background: rgba(249, 115, 22, 0.12);
+}
+/* on ground and in air = teal */
+.badge-ground-air {
+  color: #14b8a6;
+  border-color: rgba(20, 184, 166, 0.45);
+  background: rgba(20, 184, 166, 0.12);
+}
+
+/* Inline status text colors — always win over Tailwind utilities */
+.status-in-development,
+span.status-in-development,
+a .status-in-development,
+.badge .status-in-development,
+.product-strip-card .status-in-development {
+  color: #3b82f6 !important; /* in development = blue */
+}
+.status-production,
+span.status-production,
+a .status-production,
+.badge .status-production,
+.product-strip-card .status-production {
+  color: #22c55e !important; /* production = green */
+}
+.status-in-air,
+span.status-in-air,
+a .status-in-air,
+.badge .status-in-air {
+  color: #22d3ee !important; /* in air = cyan */
+}
+.status-on-ground,
+span.status-on-ground,
+a .status-on-ground,
+.badge .status-on-ground {
+  color: #f97316 !important; /* on ground = orange */
+}
+.status-ground-air,
+span.status-ground-air,
+a .status-ground-air,
+.badge .status-ground-air {
+  color: #14b8a6 !important; /* on ground and in air = teal */
+}
+.status-attritable {
+  color: #c2410c !important; /* dark orange */
+  font-weight: 600;
+}
+.status-recoverable {
+  color: #22c55e !important; /* green */
+  font-weight: 600;
+}
+
+/* HSI development placeholder — military / courier / amber */
+.hsi-dev-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background:
+    linear-gradient(180deg, rgba(10, 14, 22, 0.92) 0%, rgba(8, 10, 16, 0.98) 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(245, 158, 11, 0.03) 2px,
+      rgba(245, 158, 11, 0.03) 3px
+    );
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  box-sizing: border-box;
+}
+.hsi-dev-placeholder .hsi-dev-main {
+  font-family: 'Courier New', Courier, ui-monospace, monospace;
+  font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f59e0b;
+  line-height: 1.35;
+  margin: 0.55rem 0;
+  text-shadow: 0 0 18px rgba(245, 158, 11, 0.35);
+}
+.hsi-dev-placeholder .hsi-dev-line {
+  font-family: 'Courier New', Courier, ui-monospace, monospace;
+  font-size: clamp(0.6rem, 1.4vw, 0.72rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f59e0b;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+/* Platform commonality table — aligned to site cards / mono / amber sections */
+.commonality-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.8rem;
+  font-family: Inter, system-ui, sans-serif;
+}
+.commonality-table thead th {
+  padding: 0.55rem 0.65rem;
+  color: #94a3b8;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.35);
+  background: rgba(12, 17, 26, 0.6);
+}
+.commonality-table thead th:first-child {
+  text-align: left;
+  color: #64748b;
+}
+.commonality-table tbody td {
+  padding: 0.45rem 0.65rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(30, 42, 58, 0.85);
+  color: #e2e8f0;
+  vertical-align: middle;
+}
+.commonality-table tbody tr:not(.group-row):hover td {
+  background: rgba(245, 158, 11, 0.04);
+}
+.commonality-table td:first-child {
+  text-align: left;
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 0.78rem;
+  padding-left: 0.85rem;
+}
+.commonality-table .group-row td {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.04) 100%);
+  color: #f59e0b;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 700;
+  padding: 0.5rem 0.65rem 0.5rem 0.85rem;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.28);
+  border-top: 1px solid rgba(245, 158, 11, 0.12);
+}
+.commonality-table tbody tr.group-row + tr td {
+  border-top: none;
+}
+.commonality-table .check {
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.commonality-table .new-cell {
+  color: #3b82f6 !important;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.commonality-table .empty-cell {
+  color: #64748b !important;
+  font-weight: 400;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Table styles for specs */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.spec-table th, .spec-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.spec-table th { color: var(--text-dim); font-weight: 500; width: 40%; }
+.spec-table td { color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-hover); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .desktop-nav { display: none !important; }
+  .mobile-toggle { display: flex !important; }
+}
+@media (min-width: 1025px) {
+  .mobile-toggle { display: none !important; }
+  #mobile-menu { display: none !important; }
+}
+
+/* ─── UAS product sections (HAMR / ZEVO / HSI) ─── */
+.uas-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #05070c;
+}
+
+/* Faded looping background video under each platform section */
+.uas-bg-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.uas-bg-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35; /* match index hero */
+}
+.uas-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,7,12,0.4) 0%, rgba(5,7,12,0.85) 60%, var(--bg-deep) 100%);
+}
+
+/* A1.1 — aac_uav_family_[name].png as ~2/3-width semi-transparent underlay */
+.uas-family-underlay {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  width: 66.666%;
+  max-width: 900px;
+  height: auto;
+  bottom: 0;
+  left: -4%;
+  opacity: 0.22;
+  object-fit: contain;
+  object-position: left bottom;
+  filter: grayscale(0.15) contrast(1.05);
+  user-select: none;
+}
+.uas-family-underlay--right {
+  left: auto;
+  right: -4%;
+  object-position: right bottom;
+}
+
+/* A1.2 — semi-transparent black behind spec tables for readability over video/underlay */
+.spec-table-wrap {
+  background: rgba(0, 0, 0, 0.62);
+  border: 1px solid rgba(30, 42, 58, 0.9);
+  border-radius: 0.75rem;
+  padding: 0.25rem 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+.spec-table-wrap .spec-table {
+  margin: 0;
+}
+.spec-table-wrap .spec-table th,
+.spec-table-wrap .spec-table td {
+  border-bottom-color: rgba(30, 42, 58, 0.85);
+}
+.spec-table-wrap .spec-table tr:last-child th,
+.spec-table-wrap .spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Spec chips stay readable over video */
+.uas-section .spec-chip {
+  background: rgba(12, 17, 26, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Primary product imagery elevation */
+.uas-primary-img {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 768px) {
+  .uas-family-underlay {
+    width: 85%;
+    opacity: 0.14;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+  .uas-family-underlay--right {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  .uas-bg-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35; /* match index hero */
+}
+}
+
+
+/* Title-row family silhouette — ~same line-height as UAV name */
+.uas-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem 0.65rem;
+  flex-wrap: nowrap;
+}
+.uas-title-row h2 {
+  line-height: 1.15;
+  margin: 0;
+}
+.uas-title-family {
+  /* Match H2 line box: text-3xl (1.875rem) × 1.15 ≈ 2.15rem; scale with title */
+  height: 1.15em;
+  width: auto;
+  max-height: 1.15em;
+  max-width: 2.75em;
+  font-size: 1.875rem; /* text-3xl */
+  object-fit: contain;
+  object-position: left center;
+  opacity: 0.9;
+  flex-shrink: 0;
+  align-self: center;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.4));
+}
+@media (min-width: 640px) {
+  .uas-title-family {
+    font-size: 2.25rem; /* sm:text-4xl */
+  }
+}
+
+/* Static faded image underlay (ZEVO print background) */
+.uas-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.uas-bg-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--uas-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.35; /* match .hero-video-wrap video */
+  filter: none;
+}
+.uas-bg-image .hero-overlay {
+  z-index: 1;
+}
+.uas-bg-image .uas-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,7,12,0.4) 0%, rgba(5,7,12,0.85) 60%, var(--bg-deep) 100%);
+}
+
+
+/* ─── Index hero: full unfaded video ─── */
+.hero-video-wrap--full video {
+  opacity: 1; /* not faded */
+}
+.hero-overlay--text-only {
+  /* minimal darkening only where needed for white text */
+  background: linear-gradient(
+    180deg,
+    rgba(5, 7, 12, 0.25) 0%,
+    rgba(5, 7, 12, 0.15) 45%,
+    rgba(5, 7, 12, 0.55) 100%
+  );
+}
+.hero-center-copy {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.85), 0 0 40px rgba(0, 0, 0, 0.45);
+}
+.hero-center-copy span {
+  display: block;
+}
+.hero-center-copy span + span {
+  margin-top: 0.12em;
+}
+
+/* Product strip — larger names + prominent key features */
+.product-strip-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+@media (min-width: 768px) {
+  .product-strip-name { font-size: 1.75rem; }
+}
+.product-strip-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.product-strip-key {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 0.375rem;
+  padding: 0.3rem 0.55rem;
+  letter-spacing: 0.02em;
+}
+@media (min-width: 768px) {
+  .product-strip-key { font-size: 1.05rem; }
+}
+
+/* SPEARHEAD section: dark tagline logo ~33% page width, behind content */
+.spearhead-bg-logo {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translateX(-50%);
+  width: 33%;
+  max-width: 480px;
+  min-width: 180px;
+  height: auto;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+  object-fit: contain;
+}
+
+/* UAS family section underlay — strictly behind content */
+.family-section {
+  isolation: isolate;
+}
+.family-section-underlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.family-section-underlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 0.16;
+  filter: saturate(0.85) brightness(0.9);
+}
+.family-section > .max-w-7xl {
+  position: relative;
+  z-index: 1;
+}
+
+/* HSI card simulation label (courier / mono) */
+.sim-overlay {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  font-family: 'Courier New', Courier, ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  pointer-events: none;
+}
+
+/* Why AAC / Family full-bleed faded manufacturing BG */
+.why-aac-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.why-aac-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--why-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+  filter: saturate(0.7) brightness(0.65);
+}
+.why-aac-bg .hero-overlay {
+  z-index: 1;
+}
+
+/* Missions section underlay (mdouas.png) */
+.missions-section {
+  isolation: isolate;
+}
+.missions-section-underlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.missions-section-underlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--missions-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.14;
+  filter: saturate(0.75) brightness(0.7);
+}
+
+/* Services page: SPEARHEAD logo as pure background (no layout space) */
+.services-page {
+  position: relative;
+  isolation: isolate;
+}
+.services-page-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.services-page-bg img {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  width: min(70vw, 720px);
+  height: auto;
+  max-width: 720px;
+  opacity: 0.14;
+  object-fit: contain;
+  user-select: none;
+}
+.services-page > section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Site header logo — larger, transparent PNG blends on dark nav */
+.site-logo-link {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+.site-logo {
+  height: 3.25rem; /* ~52px — readable wordmark */
+  width: auto;
+  max-height: 3.5rem;
+  object-fit: contain;
+  background: transparent;
+  display: block;
+}
+@media (min-width: 640px) {
+  .site-logo {
+    height: 3.75rem;
+  }}
+/* Casualty CDS — inverted MCP @ ~25% of original large size */
+
+.casualty-mcp-logo {
+  display: block !important;
+  width: 192px !important;
+  object-fit: contain !important;
+  /* pre-inverted PNG — no CSS filter */
+  filter: none !important;
+  -webkit-filter: none !important;
+}
