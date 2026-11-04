@@ -25,8 +25,8 @@
  <div class="nav-dropdown">
  <a href="uas.html" class="nav-link ${isActive('uas.html') ? 'active' : ''}">UAS</a>
  <div class="nav-dropdown-panel">
- <a href="uas.html#hsi">HSI<span><span class="status-pre-production">pre-production</span> · group 2</span></a>
- <a href="uas.html#zevo">ZEVO<span><span class="status-production">production</span> · group 1</span></a>
+ <a href="uas.html#hsi">HSI<span><span class="status-pre-production">in development</span> · group 2</span></a>
+ <a href="uas.html#zevo">ZEVO<span><span class="status-production">early access</span> · group 1</span></a>
  <a href="uas.html#hamr">HAMR<span><span class="status-production">production</span> · group 2</span></a>
  </div>
  </div>
