@@ -97,8 +97,8 @@
  <div>
  <div class="text-xs font-mono text-amber-500 tracking-widest mb-2">UAS</div>
  <a href="uas.html" class="block py-2 text-slate-200 font-medium">All Platforms</a>
- <a href="uas.html#hsi" class="block py-2 text-slate-400 text-sm pl-3">HSI <span class="text-xs"><span class="status-pre-production">pre-production</span> · group 2</span></a>
- <a href="uas.html#zevo" class="block py-2 text-slate-400 text-sm pl-3">ZEVO <span class="text-xs"><span class="status-production">production</span> · group 1</span></a>
+ <a href="uas.html#hsi" class="block py-2 text-slate-400 text-sm pl-3">HSI <span class="text-xs"><span class="status-pre-production">in development</span> · group 2</span></a>
+ <a href="uas.html#zevo" class="block py-2 text-slate-400 text-sm pl-3">ZEVO <span class="text-xs"><span class="status-production">early access</span> · group 1</span></a>
  <a href="uas.html#hamr" class="block py-2 text-slate-400 text-sm pl-3">HAMR <span class="text-xs"><span class="status-production">production</span> · group 2</span></a>
  </div>
  <div>
