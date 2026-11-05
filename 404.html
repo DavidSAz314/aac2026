@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page not found | Advanced Aircraft Company</title>
+  <meta name="description" content="The page you requested is not on the Advanced Aircraft Company SPEARHEAD site." />
+  <meta name="robots" content="noindex" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{deep:'#05070c',card:'#0c111a',elevated:'#121826',accent:{DEFAULT:'#f59e0b'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+  <link rel="stylesheet" href="css/styles.css?v=404-1" />
+  <link rel="icon" href="favicon.ico?v=aac-logo-web-jpg" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/logos/favicon.png?v=aac-logo-web-jpg" />
+  <link rel="apple-touch-icon" href="assets/logos/favicon.png?v=aac-logo-web-jpg" />
+  <style>
+    .error-404-page {
+      min-height: calc(100vh - 8rem);
+      display: flex;
+      align-items: center;
+    }
+    .error-404-code {
+      font-family: ui-monospace, 'JetBrains Mono', monospace;
+      font-size: clamp(5rem, 18vw, 9rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      background: linear-gradient(180deg, #f59e0b 0%, #b45309 55%, #1e293b 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: none;
+    }
+    .error-404-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+    }
+    .error-404-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      border-radius: 0.4rem;
+      border: 1px solid var(--border, #1e293b);
+      background: rgba(12, 17, 26, 0.8);
+      color: #cbd5e1;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .error-404-links a:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+      color: #f8fafc;
+    }
+    .error-404-links a span {
+      color: #f59e0b;
+      font-family: ui-monospace, 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <div id="cookie-banner"></div>
+
+  <main class="error-404-page relative border-b border-[var(--border)]">
+    <div class="error-404-grid" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <p class="section-label mb-3">NAVIGATION ERROR</p>
+          <p class="error-404-code mb-4" aria-hidden="true">404</p>
+          <h1 class="section-title text-white mb-4">Signal lost — page not found</h1>
+          <p class="text-slate-400 leading-relaxed max-w-xl mb-8">
+            The route you requested is not on this site. It may have moved, been renamed, or never existed.
+            Return to AAC home or jump to a primary section below.
+          </p>
+          <div class="flex flex-wrap gap-3 mb-10">
+            <a href="index.html" class="btn-primary">Return home</a>
+            <a href="uas.html" class="btn-outline">Software platform</a>
+            <a href="missions.html" class="btn-outline">Missions</a>
+          </div>
+          <p class="text-xs font-mono text-slate-600">
+            Advanced Aircraft Company · SPEARHEAD · Hampton, VA
+          </p>
+        </div>
+
+        <div class="card p-6 md:p-8">
+          <p class="text-xs font-mono text-amber-500 tracking-widest mb-4">QUICK LINKS</p>
+          <div class="error-404-links grid sm:grid-cols-2 gap-3">
+            <a href="index.html"><span>01</span> Home</a>
+            <a href="uas.html"><span>02</span> HSI · ZEVO · HAMR</a>
+            <a href="missions.html"><span>03</span> Missions</a>
+            <a href="services.html"><span>04</span> Customers</a>
+            <a href="integrations.html"><span>05</span> Integrations</a>
+            <a href="compliance.html"><span>06</span> Compliance</a>
+            <a href="company.html"><span>07</span> Company</a>
+            <a href="investors.html"><span>08</span> Investors</a>
+          </div>
+          <p class="text-xs text-slate-500 mt-6 leading-relaxed">
+            Need a capability brief or support? Contact
+            <a href="mailto:info@flyaac.com" class="text-amber-500 hover:underline">info@flyaac.com</a>
+            or call
+            <a href="tel:+17573256712" class="text-amber-500 hover:underline">757.325.6712</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
