@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  var path = window.location.pathname;
+  // If the path ends with a slash and isn't just the root domain
+  if (path.endsWith('/') && path.length > 1) {
+    // Remove the trailing slash and redirect
+    var newPath = path.slice(0, -1);
+    window.location.replace(newPath + window.location.search + window.location.hash);
+  }
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 — Page not found | Advanced Aircraft Company</title>
